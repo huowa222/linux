@@ -619,7 +619,7 @@ void tcp_set_keepalive(struct sock *sk, int val)
 }
 
 
-static void tcp_keepalive_timer (unsigned long data)
+static void tcp_keepalive_timer (unsigned long data)  // this is the tcp keepalive implementation
 {
 	struct sock *sk = (struct sock *) data;
 	struct inet_connection_sock *icsk = inet_csk(sk);
