@@ -655,8 +655,7 @@ static void tcp_keepalive_timer (unsigned long data)  // this is the tcp keepali
 	if (!sock_flag(sk, SOCK_KEEPOPEN) || sk->sk_state == TCP_CLOSE)
 		goto out;
 
-	elapsed = keepalive_time_when(tp);
-
+	elapsed = keepalive_time_when(tp);  //  check whether the elapsed time excede the threadhold. 
 	/* It is alive without keepalive 8) */
 	if (tp->packets_out || tcp_send_head(sk))
 		goto resched;
